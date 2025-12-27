@@ -5,345 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Muscle Building Workout Plan</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 30px;
-            background: #f8f9fa;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .stat-card h3 {
-            color: #f5576c;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        
-        .stat-card p {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section h2 {
-            color: #f5576c;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #f5576c;
-        }
-        
-        .split-selector {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .split-button {
-            padding: 20px;
-            background: #f8f9fa;
-            border: 3px solid #e9ecef;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-align: center;
-        }
-        
-        .split-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .split-button.active {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            border-color: #f5576c;
-        }
-        
-        .split-button h3 {
-            font-size: 1.3em;
-            margin-bottom: 5px;
-        }
-        
-        .split-button p {
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-        
-        .workout-content {
-            display: none;
-        }
-        
-        .workout-content.active {
-            display: block;
-        }
-        
-        .day-card {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            border-left: 5px solid #f5576c;
-        }
-        
-        .day-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .day-header h3 {
-            color: #f5576c;
-            font-size: 1.5em;
-        }
-        
-        .day-badge {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-        }
-        
-        .exercise-list {
-            margin-top: 20px;
-        }
-        
-        .exercise-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .exercise-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .exercise-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .sets-reps {
-            background: #f5576c;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-        
-        .exercise-notes {
-            color: #666;
-            font-size: 0.95em;
-            margin-top: 10px;
-            padding-left: 15px;
-            border-left: 3px solid #f093fb;
-        }
-        
-        .warm-up-box {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
-        .warm-up-box h4 {
-            color: #d63031;
-            margin-bottom: 10px;
-        }
-        
-        .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .principle-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-top: 4px solid #f5576c;
-        }
-        
-        .principle-card h4 {
-            color: #f5576c;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .tip-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #f5576c;
-        }
-        
-        .tip-card h4 {
-            color: #f5576c;
-            margin-bottom: 10px;
-        }
-        
-        .alert-box {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        
-        .alert-box h4 {
-            color: #856404;
-            margin-bottom: 10px;
-        }
-        
-        .progress-tracker {
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
-        .progress-tracker h4 {
-            color: #2d3436;
-            margin-bottom: 15px;
-        }
-        
-        .progress-tracker ul {
-            list-style: none;
-        }
-        
-        .progress-tracker li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .progress-tracker li:before {
-            content: "📊";
-            position: absolute;
-            left: 0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        th {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-        
-        td {
-            padding: 15px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        tr:hover {
-            background: #f8f9fa;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 40px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 30px; background: #f8f9fa; }
+        .stat-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
+        .stat-card h3 { color: #f5576c; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; }
+        .stat-card p { font-size: 1.8em; font-weight: bold; color: #333; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #f5576c; font-size: 1.8em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #f5576c; }
+        .split-selector { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .split-button { padding: 20px; background: #f8f9fa; border: 3px solid #e9ecef; border-radius: 10px; cursor: pointer; transition: all 0.3s; text-align: center; }
+        .split-button:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .split-button.active { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-color: #f5576c; }
+        .split-button h3 { font-size: 1.3em; margin-bottom: 5px; }
+        .split-button p { font-size: 0.9em; opacity: 0.8; }
+        .workout-content { display: none; }
+        .workout-content.active { display: block; }
+        .day-card { background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 25px; border-left: 5px solid #f5576c; }
+        .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .day-header h3 { color: #f5576c; font-size: 1.5em; }
+        .day-badge { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
+        .exercise-list { margin-top: 20px; }
+        .exercise-item { background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .exercise-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .exercise-name { font-size: 1.2em; font-weight: bold; color: #333; }
+        .sets-reps { background: #f5576c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+        .exercise-notes { color: #666; font-size: 0.95em; margin-top: 10px; padding-left: 15px; border-left: 3px solid #f093fb; }
+        .warm-up-box { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warm-up-box h4 { color: #d63031; margin-bottom: 10px; }
+        .alert-box { background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .alert-box h4 { color: #856404; margin-bottom: 10px; }
+        .progress-tracker { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .progress-tracker h4 { color: #2d3436; margin-bottom: 15px; }
+        .progress-tracker ul { list-style: none; }
+        .progress-tracker li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .progress-tracker li:before { content: "📊"; position: absolute; left: 0; }
+        .tip-card { background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 5px solid #f5576c; margin-bottom: 15px; }
+        .tip-card h4 { color: #f5576c; margin-bottom: 10px; }
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .stats-grid {
-                padding: 20px;
-            }
-            
-            .exercise-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
+            .header h1 { font-size: 1.8em; }
+            .content { padding: 20px; }
+            .stats-grid { padding: 20px; }
+            .exercise-header { flex-direction: column; align-items: flex-start; gap: 10px; }
         }
     </style>
+    <script>
+        function showSplit(splitId) {
+            document.querySelectorAll('.workout-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.split-button').forEach(b => b.classList.remove('active'));
+            document.getElementById(splitId).classList.add('active');
+            event.target.closest('.split-button').classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -353,22 +71,10 @@
         </div>
         
         <div class="stats-grid">
-            <div class="stat-card">
-                <h3>Your Stats</h3>
-                <p>26Y, 6ft, 97kg</p>
-            </div>
-            <div class="stat-card">
-                <h3>Experience</h3>
-                <p>Beginner</p>
-            </div>
-            <div class="stat-card">
-                <h3>Goal</h3>
-                <p>Muscle Gain</p>
-            </div>
-            <div class="stat-card">
-                <h3>Frequency</h3>
-                <p>3-5 Days/Week</p>
-            </div>
+            <div class="stat-card"><h3>Your Stats</h3><p>26Y, 6ft, 97kg</p></div>
+            <div class="stat-card"><h3>Experience</h3><p>Beginner</p></div>
+            <div class="stat-card"><h3>Goal</h3><p>Muscle Gain</p></div>
+            <div class="stat-card"><h3>Frequency</h3><p>3-5 Days/Week</p></div>
         </div>
         
         <div class="content">
@@ -409,176 +115,121 @@
                     
                     <div class="warm-up-box">
                         <h4>🔥 Warm-Up (10 minutes before each workout)</h4>
-                        <p>• 5 min light cardio (treadmill, bike, or jumping jacks)</p>
-                        <p>• Dynamic stretches: arm circles, leg swings, torso twists</p>
-                        <p>• 1-2 warm-up sets of first exercise with light weight</p>
+                        <p>• 5 min light cardio • Dynamic stretches • 1-2 warm-up sets of first exercise</p>
                     </div>
                     
                     <div class="day-card">
                         <div class="day-header">
-                            <h3>Day 1, 3, 5: Full Body A/B Alternating</h3>
+                            <h3>Workout A (Alternate with B)</h3>
                             <div class="day-badge">60-75 min</div>
                         </div>
-                        
-                        <h4 style="color: #f5576c; margin: 20px 0;">Workout A (Week 1: Mon/Fri, Week 2: Wed)</h4>
                         <div class="exercise-list">
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">1. Barbell Squat</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
+                                    <span class="sets-reps">3 x 8-10</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Feet shoulder-width, knees track over toes, chest up, go to parallel or below<br>
-                                    <strong>Rest:</strong> 2-3 minutes between sets
-                                </div>
+                                <div class="exercise-notes">Feet shoulder-width, chest up, go to parallel. Rest 2-3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">2. Bench Press</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
+                                    <span class="sets-reps">3 x 8-10</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Arch your back slightly, retract shoulder blades, bar touches mid-chest<br>
-                                    <strong>Rest:</strong> 2-3 minutes
-                                </div>
+                                <div class="exercise-notes">Retract shoulder blades, bar to mid-chest. Rest 2-3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
-                                    <span class="exercise-name">3. Bent-Over Barbell Row</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
+                                    <span class="exercise-name">3. Bent-Over Row</span>
+                                    <span class="sets-reps">3 x 8-10</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Hinge at hips, back straight, pull to lower chest, squeeze shoulder blades<br>
-                                    <strong>Rest:</strong> 2 minutes
-                                </div>
+                                <div class="exercise-notes">Pull to lower chest, squeeze shoulder blades. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">4. Overhead Press</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
+                                    <span class="sets-reps">3 x 8-10</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Core tight, press straight up, don't arch back excessively<br>
-                                    <strong>Rest:</strong> 2 minutes
-                                </div>
+                                <div class="exercise-notes">Core tight, press straight up. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">5. Romanian Deadlift</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
+                                    <span class="sets-reps">3 x 10-12</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Slight knee bend, hinge at hips, bar stays close to legs, feel hamstrings stretch<br>
-                                    <strong>Rest:</strong> 2 minutes
-                                </div>
+                                <div class="exercise-notes">Slight knee bend, feel hamstring stretch. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
-                                    <span class="exercise-name">6. Dumbbell Bicep Curls</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
+                                    <span class="exercise-name">6. Bicep Curls</span>
+                                    <span class="sets-reps">3 x 10-12</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Elbows stay at sides, controlled movement, squeeze at top<br>
-                                    <strong>Rest:</strong> 1-1.5 minutes
-                                </div>
+                                <div class="exercise-notes">Controlled movement, no swinging. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">7. Plank</span>
-                                    <span class="sets-reps">3 sets x 30-60 sec</span>
+                                    <span class="sets-reps">3 x 30-60s</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Body in straight line, core tight, don't let hips sag<br>
-                                    <strong>Rest:</strong> 1 minute
-                                </div>
+                                <div class="exercise-notes">Body in straight line, core tight. Rest 1 min.</div>
                             </div>
                         </div>
-                        
-                        <h4 style="color: #f5576c; margin: 30px 0 20px 0;">Workout B (Week 1: Wed, Week 2: Mon/Fri)</h4>
+                    </div>
+                    
+                    <div class="day-card">
+                        <div class="day-header">
+                            <h3>Workout B (Alternate with A)</h3>
+                            <div class="day-badge">60-75 min</div>
+                        </div>
                         <div class="exercise-list">
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">1. Deadlift</span>
-                                    <span class="sets-reps">3 sets x 6-8 reps</span>
+                                    <span class="sets-reps">3 x 6-8</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Feet hip-width, back straight, drive through heels, hips and shoulders rise together<br>
-                                    <strong>Rest:</strong> 3 minutes
-                                </div>
+                                <div class="exercise-notes">Back straight, drive through heels. Rest 3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
-                                    <span class="exercise-name">2. Incline Dumbbell Press</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
+                                    <span class="exercise-name">2. Incline DB Press</span>
+                                    <span class="sets-reps">3 x 8-10</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Bench at 30-45 degrees, dumbbells at chest level, press up and slightly together<br>
-                                    <strong>Rest:</strong> 2 minutes
-                                </div>
+                                <div class="exercise-notes">Bench at 30-45°, press up. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
-                                    <span class="exercise-name">3. Pull-Ups or Lat Pulldown</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
+                                    <span class="exercise-name">3. Pull-Ups/Lat Pulldown</span>
+                                    <span class="sets-reps">3 x 8-10</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Pull with elbows, not biceps. Chest to bar for pull-ups<br>
-                                    <strong>Alternative:</strong> Use assisted pull-up machine or lat pulldown if can't do pull-ups yet<br>
-                                    <strong>Rest:</strong> 2 minutes
-                                </div>
+                                <div class="exercise-notes">Pull with elbows, chest to bar. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">4. Leg Press</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
+                                    <span class="sets-reps">3 x 10-12</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Feet shoulder-width, don't let knees cave in, full range of motion<br>
-                                    <strong>Rest:</strong> 2 minutes
-                                </div>
+                                <div class="exercise-notes">Full range of motion. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
-                                    <span class="exercise-name">5. Dumbbell Shoulder Press</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
+                                    <span class="exercise-name">5. DB Shoulder Press</span>
+                                    <span class="sets-reps">3 x 10-12</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Seated or standing, press dumbbells up and slightly together<br>
-                                    <strong>Rest:</strong> 2 minutes
-                                </div>
+                                <div class="exercise-notes">Press up and slightly together. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
-                                    <span class="exercise-name">6. Tricep Rope Pushdown</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
+                                    <span class="exercise-name">6. Tricep Pushdown</span>
+                                    <span class="sets-reps">3 x 10-12</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Elbows tucked at sides, extend down fully, squeeze triceps<br>
-                                    <strong>Rest:</strong> 1-1.5 minutes
-                                </div>
+                                <div class="exercise-notes">Elbows at sides, extend fully. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
                                 <div class="exercise-header">
                                     <span class="exercise-name">7. Hanging Leg Raises</span>
-                                    <span class="sets-reps">3 sets x 10-15 reps</span>
+                                    <span class="sets-reps">3 x 10-15</span>
                                 </div>
-                                <div class="exercise-notes">
-                                    <strong>Form:</strong> Hang from bar, raise legs to 90 degrees, control the descent<br>
-                                    <strong>Alternative:</strong> Lying leg raises if hanging is too difficult<br>
-                                    <strong>Rest:</strong> 1 minute
-                                </div>
+                                <div class="exercise-notes">Raise legs to 90°, control descent. Rest 1 min.</div>
                             </div>
                         </div>
                     </div>
@@ -590,287 +241,128 @@
                 <div class="section">
                     <h2>4-Day Upper/Lower Split</h2>
                     <p><strong>Schedule:</strong> Mon/Tue/Thu/Fri or Mon/Wed/Thu/Sat</p>
-                    <p style="margin-top: 10px;"><strong>Duration:</strong> 60-75 minutes per session</p>
                     
                     <div class="warm-up-box">
-                        <h4>🔥 Warm-Up (10 minutes before each workout)</h4>
-                        <p>• 5 min light cardio</p>
-                        <p>• Dynamic stretches specific to workout (upper or lower body)</p>
-                        <p>• 1-2 warm-up sets of first exercise</p>
+                        <h4>🔥 Warm-Up</h4>
+                        <p>5 min cardio • Dynamic stretches • 1-2 warm-up sets</p>
                     </div>
                     
                     <div class="day-card">
-                        <div class="day-header">
-                            <h3>Day 1: Upper Body A</h3>
-                            <div class="day-badge">Chest, Back, Shoulders</div>
-                        </div>
-                        
+                        <div class="day-header"><h3>Day 1: Upper A</h3><div class="day-badge">Chest, Back, Shoulders</div></div>
                         <div class="exercise-list">
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">1. Bench Press</span>
-                                    <span class="sets-reps">4 sets x 6-8 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Heavy compound movement. Rest 2-3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">1. Bench Press</span><span class="sets-reps">4 x 6-8</span></div>
+                                <div class="exercise-notes">Heavy compound. Rest 2-3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">2. Bent-Over Barbell Row</span>
-                                    <span class="sets-reps">4 sets x 6-8 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Pull to lower chest, squeeze shoulder blades. Rest 2-3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">2. Bent-Over Row</span><span class="sets-reps">4 x 6-8</span></div>
+                                <div class="exercise-notes">Squeeze shoulder blades. Rest 2-3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">3. Overhead Press</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Strict form, core tight. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">3. Overhead Press</span><span class="sets-reps">3 x 8-10</span></div>
+                                <div class="exercise-notes">Strict form. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">4. Lat Pulldown</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Pull to upper chest, squeeze back. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">4. Lat Pulldown</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Pull to upper chest. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">5. Dumbbell Lateral Raise</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Light weight, focus on shoulders. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">5. Lateral Raise</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Light weight, focus on shoulders. Rest 1 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">6. Face Pulls</span>
-                                    <span class="sets-reps">3 sets x 15-20 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Great for rear delts and shoulder health. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">6. Face Pulls</span><span class="sets-reps">3 x 15-20</span></div>
+                                <div class="exercise-notes">Shoulder health. Rest 1 min.</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="day-card">
-                        <div class="day-header">
-                            <h3>Day 2: Lower Body A</h3>
-                            <div class="day-badge">Quads, Glutes, Hamstrings</div>
-                        </div>
-                        
+                        <div class="day-header"><h3>Day 2: Lower A</h3><div class="day-badge">Quads, Glutes, Hams</div></div>
                         <div class="exercise-list">
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">1. Barbell Squat</span>
-                                    <span class="sets-reps">4 sets x 6-8 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    King of leg exercises. Go deep, stay tight. Rest 3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">1. Squat</span><span class="sets-reps">4 x 6-8</span></div>
+                                <div class="exercise-notes">Go deep. Rest 3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">2. Romanian Deadlift</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Feel the hamstring stretch. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">2. Romanian DL</span><span class="sets-reps">3 x 8-10</span></div>
+                                <div class="exercise-notes">Feel hamstring stretch. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">3. Leg Press</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Deep range of motion. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">3. Leg Press</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Full ROM. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">4. Leg Curl</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Isolated hamstring work. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">4. Leg Curl</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Isolated hamstrings. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">5. Calf Raises</span>
-                                    <span class="sets-reps">4 sets x 15-20 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Full range of motion, pause at top. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">5. Calf Raises</span><span class="sets-reps">4 x 15-20</span></div>
+                                <div class="exercise-notes">Full stretch and contraction. Rest 1 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">6. Planks</span>
-                                    <span class="sets-reps">3 sets x 45-60 sec</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Core stability. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">6. Planks</span><span class="sets-reps">3 x 45-60s</span></div>
+                                <div class="exercise-notes">Core stability. Rest 1 min.</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="day-card">
-                        <div class="day-header">
-                            <h3>Day 3: Upper Body B</h3>
-                            <div class="day-badge">Chest, Back, Arms</div>
-                        </div>
-                        
+                        <div class="day-header"><h3>Day 3: Upper B</h3><div class="day-badge">Chest, Back, Arms</div></div>
                         <div class="exercise-list">
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">1. Incline Dumbbell Press</span>
-                                    <span class="sets-reps">4 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Upper chest focus. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">1. Incline DB Press</span><span class="sets-reps">4 x 8-10</span></div>
+                                <div class="exercise-notes">Upper chest. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">2. Pull-Ups or Lat Pulldown</span>
-                                    <span class="sets-reps">4 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Use assisted machine if needed. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">2. Pull-Ups</span><span class="sets-reps">4 x 8-10</span></div>
+                                <div class="exercise-notes">Use assisted if needed. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">3. Dumbbell Shoulder Press</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Seated for stability. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">3. DB Shoulder Press</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Seated for stability. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">4. Cable Rows</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Squeeze shoulder blades together. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">4. Cable Rows</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Squeeze shoulder blades. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">5. Barbell Bicep Curl</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    No swinging, controlled movement. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">5. Barbell Curl</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">No swinging. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">6. Tricep Dips or Pushdowns</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Full extension at bottom. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">6. Tricep Dips</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Full extension. Rest 1.5 min.</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="day-card">
-                        <div class="day-header">
-                            <h3>Day 4: Lower Body B</h3>
-                            <div class="day-badge">Legs, Glutes, Core</div>
-                        </div>
-                        
+                        <div class="day-header"><h3>Day 4: Lower B</h3><div class="day-badge">Legs, Glutes, Core</div></div>
                         <div class="exercise-list">
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">1. Deadlift</span>
-                                    <span class="sets-reps">4 sets x 5-6 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Heavy and powerful. Perfect form essential. Rest 3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">1. Deadlift</span><span class="sets-reps">4 x 5-6</span></div>
+                                <div class="exercise-notes">Perfect form essential. Rest 3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">2. Front Squat or Goblet Squat</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Quad-focused variation. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">2. Front/Goblet Squat</span><span class="sets-reps">3 x 8-10</span></div>
+                                <div class="exercise-notes">Quad-focused. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">3. Bulgarian Split Squat</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps/leg</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Unilateral leg development. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">3. Bulgarian Split Squat</span><span class="sets-reps">3 x 10-12/leg</span></div>
+                                <div class="exercise-notes">Unilateral leg work. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">4. Leg Extension</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Quad isolation, squeeze at top. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">4. Leg Extension</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Quad isolation. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">5. Glute-Ham Raise or Leg Curl</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Hamstring and glute builder. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">5. Glute-Ham Raise</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Hamstring builder. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">6. Ab Wheel Rollouts</span>
-                                    <span class="sets-reps">3 sets x 10-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Advanced core exercise. Use knees if needed. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">6. Ab Rollouts</span><span class="sets-reps">3 x 10-15</span></div>
+                                <div class="exercise-notes">Advanced core. Rest 1 min.</div>
                             </div>
                         </div>
                     </div>
@@ -881,263 +373,196 @@
             <div id="split5" class="workout-content">
                 <div class="section">
                     <h2>5-Day Push/Pull/Legs Split</h2>
-                    <p><strong>Schedule:</strong> Mon (Push), Tue (Pull), Wed (Legs), Thu (Push), Fri (Pull), Sat/Sun (Rest)</p>
-                    <p style="margin-top: 10px;"><strong>Duration:</strong> 60-75 minutes per session</p>
+                    <p><strong>Schedule:</strong> Mon (Push), Tue (Pull), Wed (Legs), Thu (Push), Fri (Pull)</p>
                     
                     <div class="warm-up-box">
-                        <h4>🔥 Warm-Up (10 minutes before each workout)</h4>
-                        <p>• 5 min light cardio</p>
-                        <p>• Specific warm-up for muscle groups being trained</p>
-                        <p>• 2 warm-up sets of first exercise</p>
+                        <h4>🔥 Warm-Up</h4>
+                        <p>5 min cardio • Specific warm-up • 2 warm-up sets</p>
                     </div>
                     
                     <div class="day-card">
-                        <div class="day-header">
-                            <h3>Day 1 & 4: Push (Chest, Shoulders, Triceps)</h3>
-                            <div class="day-badge">Push Muscles</div>
-                        </div>
-                        
+                        <div class="day-header"><h3>Day 1 & 4: Push</h3><div class="day-badge">Chest, Shoulders, Triceps</div></div>
                         <div class="exercise-list">
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">1. Bench Press</span>
-                                    <span class="sets-reps">4 sets x 6-8 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Main chest builder. Heavy weight, perfect form. Rest 2-3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">1. Bench Press</span><span class="sets-reps">4 x 6-8</span></div>
+                                <div class="exercise-notes">Main chest builder. Rest 2-3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">2. Overhead Press</span>
-                                    <span class="sets-reps">4 sets x 6-8 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Primary shoulder exercise. Rest 2-3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">2. Overhead Press</span><span class="sets-reps">4 x 6-8</span></div>
+                                <div class="exercise-notes">Primary shoulder exercise. Rest 2-3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">3. Incline Dumbbell Press</span>
-                                    <span class="sets-reps">3 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Upper chest focus. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">3. Incline DB Press</span><span class="sets-reps">3 x 8-10</span></div>
+                                <div class="exercise-notes">Upper chest. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">4. Dumbbell Lateral Raise</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Side delt builder. Lighter weight, higher reps. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">4. Lateral Raise</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Side delts. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">5. Chest Dips or Cable Flyes</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Lower chest emphasis. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">5. Dips/Cable Flyes</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Lower chest. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">6. Tricep Rope Pushdown</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Isolated tricep work. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">6. Tricep Pushdown</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Isolated triceps. Rest 1 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">7. Overhead Tricep Extension</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Long head of triceps. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">7. Overhead Extension</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Long head triceps. Rest 1 min.</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="day-card">
-                        <div class="day-header">
-                            <h3>Day 2 & 5: Pull (Back, Biceps)</h3>
-                            <div class="day-badge">Pull Muscles</div>
-                        </div>
-                        
+                        <div class="day-header"><h3>Day 2 & 5: Pull</h3><div class="day-badge">Back, Biceps</div></div>
                         <div class="exercise-list">
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">1. Deadlift (Day 2 only)</span>
-                                    <span class="sets-reps">4 sets x 5-6 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    King of back exercises. Only on first pull day. Rest 3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">1. Deadlift (Day 2 only)</span><span class="sets-reps">4 x 5-6</span></div>
+                                <div class="exercise-notes">Only on first pull day. Rest 3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">2. Pull-Ups or Lat Pulldown</span>
-                                    <span class="sets-reps">4 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Lat width builder. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">2. Pull-Ups</span><span class="sets-reps">4 x 8-10</span></div>
+                                <div class="exercise-notes">Lat width. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">3. Bent-Over Barbell Row</span>
-                                    <span class="sets-reps">4 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Back thickness. Pull to lower chest. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">3. Barbell Row</span><span class="sets-reps">4 x 8-10</span></div>
+                                <div class="exercise-notes">Back thickness. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">4. Seated Cable Row</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Mid-back focus. Squeeze shoulder blades. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">4. Cable Row</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Mid-back. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">5. Face Pulls</span>
-                                    <span class="sets-reps">3 sets x 15-20 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Rear delts and upper back. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">5. Face Pulls</span><span class="sets-reps">3 x 15-20</span></div>
+                                <div class="exercise-notes">Rear delts. Rest 1 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">6. Barbell Bicep Curl</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Mass builder for biceps. No swinging. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">6. Barbell Curl</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Mass builder. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">7. Hammer Curls</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Brachialis and forearm development. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">7. Hammer Curls</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Brachialis and forearms. Rest 1 min.</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="day-card">
-                        <div class="day-header">
-                            <h3>Day 3: Legs (Quads, Hamstrings, Glutes, Calves)</h3>
-                            <div class="day-badge">Leg Day</div>
-                        </div>
-                        
+                        <div class="day-header"><h3>Day 3: Legs</h3><div class="day-badge">Quads, Hams, Glutes, Calves</div></div>
                         <div class="exercise-list">
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">1. Barbell Squat</span>
-                                    <span class="sets-reps">4 sets x 6-8 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    King of leg exercises. Go deep, stay tight. Rest 3 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">1. Squat</span><span class="sets-reps">4 x 6-8</span></div>
+                                <div class="exercise-notes">King of leg exercises. Rest 3 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">2. Romanian Deadlift</span>
-                                    <span class="sets-reps">4 sets x 8-10 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Hamstring and glute builder. Feel the stretch. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">2. Romanian DL</span><span class="sets-reps">4 x 8-10</span></div>
+                                <div class="exercise-notes">Hamstrings and glutes. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">3. Leg Press</span>
-                                    <span class="sets-reps">3 sets x 10-12 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Additional quad volume. Rest 2 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">3. Leg Press</span><span class="sets-reps">3 x 10-12</span></div>
+                                <div class="exercise-notes">Additional quad volume. Rest 2 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">4. Leg Curl</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Hamstring isolation. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">4. Leg Curl</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Hamstring isolation. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">5. Leg Extension</span>
-                                    <span class="sets-reps">3 sets x 12-15 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Quad isolation. Squeeze at top. Rest 1.5 minutes.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">5. Leg Extension</span><span class="sets-reps">3 x 12-15</span></div>
+                                <div class="exercise-notes">Quad isolation. Rest 1.5 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">6. Calf Raises (Standing)</span>
-                                    <span class="sets-reps">4 sets x 15-20 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Full stretch and contraction. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">6. Standing Calf Raises</span><span class="sets-reps">4 x 15-20</span></div>
+                                <div class="exercise-notes">Full stretch. Rest 1 min.</div>
                             </div>
-                            
                             <div class="exercise-item">
-                                <div class="exercise-header">
-                                    <span class="exercise-name">7. Seated Calf Raises</span>
-                                    <span class="sets-reps">3 sets x 15-20 reps</span>
-                                </div>
-                                <div class="exercise-notes">
-                                    Targets soleus muscle. Rest 1 minute.
-                                </div>
+                                <div class="exercise-header"><span class="exercise-name">7. Seated Calf Raises</span><span class="sets-reps">3 x 15-20</span></div>
+                                <div class="exercise-notes">Soleus muscle. Rest 1 min.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- PROGRESSIVE OVERLOAD SECTION -->
+            <!-- PROGRESSIVE OVERLOAD -->
             <div class="section">
-                <h2>📈 Progressive Overload: The Key to Growth</h2>
-                
+                <h2>📈 Progressive Overload</h2>
                 <div class="progress-tracker">
                     <h4>How to Progress Each Week</h4>
                     <ul>
-                        <li>Week 1-2: Learn the movements, focus on perfect form with moderate weight</li>
+                        <li>Week 1-2: Learn movements, focus on form with moderate weight</li>
                         <li>Week 3-4: Once form is solid, start pushing intensity</li>
-                        <li>Every week after: Try to add weight OR reps to your main lifts</li>
-                        <li>If you can do all prescribed reps with good form, add 2.5-
+                        <li>Every week: Try to add weight OR reps to main lifts</li>
+                        <li>If you complete all reps with good form, add 2.5-5kg next session</li>
+                        <li>Track all workouts in a notebook or app</li>
+                        <li>Don't sacrifice form for weight - ego lifting leads to injury</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- NUTRITION -->
+            <div class="section">
+                <h2>🍗 Nutrition for Muscle Gain</h2>
+                <div class="tip-card">
+                    <h4>Calories</h4>
+                    <p>Aim for 200-500 calorie surplus above maintenance. For you (97kg): Start with 2,800-3,000 calories/day and adjust based on weekly weight changes. Gain 0.25-0.5kg per week.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Protein</h4>
+                    <p>0.8-1g per pound of bodyweight. For you: 170-215g protein daily. Sources: chicken, fish, lean beef, eggs, Greek yogurt, protein powder.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Carbs & Fats</h4>
+                    <p>Carbs: 3-5g per kg bodyweight (290-485g) for energy. Fats: 0.5-0.8g per kg (49-78g) for hormones. Fill remaining calories with healthy foods.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Meal Timing</h4>
+                    <p>Eat protein within 2 hours post-workout. Space protein across 3-5 meals. Pre-workout: carbs + protein 1-2 hours before. Stay hydrated: 3-4L water daily.</p>
+                </div>
+            </div>
+            
+            <!-- RECOVERY -->
+            <div class="section">
+                <h2>💤 Recovery & Rest</h2>
+                <div class="tip-card">
+                    <h4>Sleep</h4>
+                    <p>7-9 hours per night is critical. Muscle grows during sleep, not during workouts. Poor sleep = poor gains.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Rest Days</h4>
+                    <p>Take at least 2 full rest days per week. Active recovery (walking, light cardio) is fine but avoid heavy lifting.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Deload Weeks</h4>
+                    <p>Every 6-8 weeks, reduce weight by 40-50% for one week. This allows full recovery and prevents burnout.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Listen to Your Body</h4>
+                    <p>Sharp pain = stop immediately. Soreness = normal. If constantly exhausted or joints hurt, take extra rest days.</p>
+                </div>
+            </div>
+            
+            <!-- FINAL TIPS -->
+            <div class="section">
+                <h2>🎯 Final Tips for Success</h2>
+                <div class="tip-card">
+                    <h4>✅ Be Consistent</h4>
+                    <p>The best program is the one you stick to. Show up, even on days you don't feel like it.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>✅ Track Progress</h4>
+                    <p>Take weekly photos, measurements, and track strength gains. Scale weight is only one metric.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>✅ Form First, Weight Second</h4>
+                    <p>Perfect form with lighter weight beats heavy weight with poor form every time.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>✅ Be Patient</h4>
+                    <p>Building muscle takes months and years, not weeks. Trust the process and stay committed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
